@@ -1,4 +1,4 @@
-/* ====== Custom Light/Dark Toggle with Sun & Moon ====== */
+/* ====== Toggle Switch Bersih (tanpa ☀️🌙) ====== */
 .light-switch {
   position: relative;
   width: 64px;
@@ -7,7 +7,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: transform var(--transition);
+  transition: transform 0.25s ease;
 }
 
 .light-switch:hover {
@@ -15,26 +15,13 @@
 }
 
 .switch-track {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 0 6px;
-  border-radius: 999px; /* full pill */
-  background: color-mix(in oklab, var(--text) 20%, transparent);
-  border: 2px solid color-mix(in oklab, var(--text) 30%, transparent);
+  border-radius: 999px;
+  background: var(--track-bg, rgba(0,0,0,0.2));
+  border: 2px solid var(--track-border, rgba(0,0,0,0.3));
   position: relative;
-  transition: background var(--transition), border-color var(--transition);
-  font-size: 14px;
-}
-
-/* Sun (left) and Moon (right) */
-.switch-track::before {
-  content: "☀️";
-}
-.switch-track::after {
-  content: "🌙";
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .switch-handle {
@@ -43,19 +30,39 @@
   left: 3px;
   width: 28px;
   height: 28px;
-  background: var(--text);
+  background: var(--text, #333);
   border-radius: 50%;
-  transition: transform 0.4s cubic-bezier(.4, .2, .2, 1), background var(--transition);
+  transition: transform 0.35s cubic-bezier(.4,.2,.2,1), background 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.25);
 }
 
-/* Dark mode state */
+/* Dark mode */
 :root.dark .switch-track {
-  background: color-mix(in oklab, var(--primary) 35%, transparent);
-  border-color: var(--primary);
+  background: var(--track-bg-dark, rgba(255,255,255,0.2));
+  border-color: var(--primary, #f9d71c);
 }
 
 :root.dark .switch-handle {
-  transform: translateX(30px); /* geser ke kanan */
-  background: #f9d71c; /* kuning keemasan */
+  transform: translateX(30px);
+  background: #f9d71c;
+}
+
+/* === Tambahan aksesibilitas kecil === */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #fff;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  z-index: 999;
 }
