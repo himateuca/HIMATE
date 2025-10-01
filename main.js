@@ -8,7 +8,7 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Preferensi tema
+  // Preferensi tema: localStorage > prefers-color-scheme
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const saved = localStorage.getItem('theme');
   const initialDark = saved ? saved === 'dark' : prefersDark;
@@ -33,22 +33,24 @@
     }
   }
 
-  // Mobile nav
+  // Mobile nav toggle
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', String(open));
     });
 
+    // Tutup setelah klik link
     navLinks.addEventListener('click', (e) => {
-      if (e.target instanceof HTMLAnchorElement) {
+      const target = e.target;
+      if (target instanceof HTMLAnchorElement) {
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
-  // Scroll reveal
+  // Scroll reveal (hormati prefers-reduced-motion)
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reducedMotion && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -62,6 +64,7 @@
 
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   } else {
+    // Tanpa animasi: tampilkan langsung
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
   }
 })();
