@@ -62,6 +62,62 @@ a { color: inherit; text-decoration: none; }
 .brand img { border-radius: 6px; box-shadow: var(--shadow-sm); }
 .brand-text { font-weight: 700; letter-spacing: .2px; }
 
+/* ====== Custom Light Switch Toggle ====== */
+.light-switch {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--transition);
+}
+
+.light-switch:hover {
+  transform: scale(1.05);
+}
+
+.switch-track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in oklab, var(--text) 20%, transparent);
+  border: 2px solid color-mix(in oklab, var(--text) 30%, transparent);
+  border-radius: 8px;
+  position: relative;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: var(--text);
+  border-radius: 50%;
+  transition: transform var(--transition), background var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode active state */
+:root.dark .switch-track {
+  background: color-mix(in oklab, var(--primary) 40%, transparent);
+  border-color: var(--primary);
+}
+
+:root.dark .switch-handle {
+  transform: translateX(24px);
+  background: var(--primary);
+}
+
+.light-switch:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 10px;
+}
+
 .nav-links {
   display: flex; gap: 18px; align-items: center; list-style: none; padding: 0; margin: 0;
 }
@@ -75,19 +131,11 @@ a { color: inherit; text-decoration: none; }
   display: inline-grid; place-items: center;
   width: 40px; height: 40px; border-radius: 10px; border: 1px solid transparent;
   background: var(--surface);
-  position: relative; /* Untuk overlay icon */
+  position: relative;
   transition: transform var(--transition), border-color var(--transition), background var(--transition);
 }
 .icon-btn:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--text) 14%, transparent); }
 .icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; }
-.icon-moon, .icon-sun { 
-  position: absolute; 
-  transition: opacity var(--transition);
-}
-:root.dark .icon-moon { opacity: 0; }
-:root.dark .icon-sun { opacity: 1; }
-.icon-sun { opacity: 0; }
-.icon-moon { opacity: 1; }
 
 /* Mobile nav */
 .nav-toggle { display: none; }
@@ -136,7 +184,7 @@ a { color: inherit; text-decoration: none; }
 .section-desc { margin: 0; color: var(--muted); }
 .lead { font-size: 1.05rem; color: var(--text); }
 
-/* ====== Cards ====== */
+/* ====== Cards with Custom Image Sizing ====== */
 .grid.cards {
   display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr);
 }
@@ -152,7 +200,28 @@ a { color: inherit; text-decoration: none; }
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: color-mix(in oklab, var(--primary) 30%, transparent); }
-.card-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* Custom image sizing for A3 (297x420mm) and A4 (210x297mm) aspect ratios */
+.card-media {
+  width: 100%;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.card-media img {
+  width: 100%;
+  /* A3 aspect ratio: 297/420 = 0.707 or 420/297 = 1.414 */
+  /* A4 aspect ratio: 210/297 = 0.707 or 297/210 = 1.414 */
+  /* Using portrait orientation (taller than wide) */
+  aspect-ratio: 210 / 297;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.card:hover .card-media img {
+  transform: scale(1.05);
+}
+
 .card-body { padding: 14px 14px 16px; }
 .card-title { margin: 0 0 6px; font-size: 1.05rem; }
 .card-text { margin: 0 0 10px; color: var(--muted); }
