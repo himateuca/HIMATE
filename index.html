@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Himpunan Mahasiswa Elektro - UCA</title>
+  <meta name="description" content="Website resmi Himpunan Mahasiswa Elektro UCA dan showcase proyek capstone mahasiswa." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigasi utama">
+      <a href="#" class="brand">
+        <img src="assets/logo.png" alt="Logo HME UCA" width="48" height="48" />
+        <span class="brand-text">HIMATE UCA</span>
+      </a>
+
+      <button id="themeToggle" class="icon-btn" aria-label="Ganti mode gelap/terang">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" />
+        </svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42" />
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <h1 class="title text-balance">
+            Himpunan Mahasiswa Elektro<br />
+            Universitas Cendekia Abditama
+          </h1>
+          <p class="subtitle">
+            Ruang kolaborasi, inovasi, dan showcase proyek capstone mahasiswa Elektro UCA.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">Lihat Proyek</a>
+            <a class="btn" href="#about">Tentang Kami</a>
+          </div>
+        </div>
+        <figure class="hero-media reveal">
+          <video class="hero-video" src="video/profile.mp4" poster="assets/hero-bg.jpg" controls playsinline muted></video>
+          <figcaption class="sr-only">Video profil HME UCA</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 class="section-title">Project Showcase</h2>
+          <p class="section-desc">
+            Kumpulan contoh proyek capstone mahasiswa Elektro UCA yang berfokus pada solusi nyata dan inovasi teknologi.
+          </p>
+        </header>
+
+        <div class="grid cards">
+          <!-- Card 1 -->
+          <article class="card reveal">
+            <div class="card-media">
+              <img src="assets/hero-bg.jpg" alt="Thumbnail Proyek 1" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Monitoring Energi Cerdas</h3>
+              <p class="card-text">
+                Sistem monitoring konsumsi listrik berbasis IoT dengan dashboard real‑time untuk optimasi energi.
+              </p>
+              <ul class="tags">
+                <li>IoT</li><li>ESP32</li><li>Dashboard</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-sm" href="#" target="_blank">Demo</a>
+                <a class="btn btn-sm btn-outline" href="#" target="_blank">Kode</a>
+              </div>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="card reveal">
+            <div class="card-media">
+              <img src="assets/hero-bg.jpg" alt="Thumbnail Proyek 2" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Kursi Ergonomis Terhubung</h3>
+              <p class="card-text">
+                Perangkat sensor postur yang memberi peringatan dan rekomendasi untuk mencegah cedera saat duduk lama.
+              </p>
+              <ul class="tags">
+                <li>Sensor</li><li>BLE</li><li>Firmware</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-sm" href="#" target="_blank">Demo</a>
+                <a class="btn btn-sm btn-outline" href="#" target="_blank">Kode</a>
+              </div>
+            </div>
+          </article>
+          <!-- Card 3 -->
+          <article class="card reveal">
+            <div class="card-media">
+              <img src="assets/hero-bg.jpg" alt="Thumbnail Proyek 3" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Drone Inspeksi Jembatan</h3>
+              <p class="card-text">
+                Platform drone semi-otomatis untuk inspeksi struktur dengan analisis citra dan pelaporan temuan.
+              </p>
+              <ul class="tags">
+                <li>Drone</li><li>CV</li><li>Edge AI</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-sm" href="#" target="_blank">Demo</a>
+                <a class="btn btn-sm btn-outline" href="#" target="_blank">Kode</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container narrow">
+        <header class="section-header reveal">
+          <h2 class="section-title">Tentang Kami</h2>
+        </header>
+        <div class="reveal">
+          <p class="lead">
+            Himpunan Mahasiswa Elektro UCA adalah wadah pengembangan kompetensi, riset, dan kolaborasi lintas bidang untuk menghasilkan karya yang berdampak.
+          </p>
+          <p>
+            Program Capstone mendorong mahasiswa merancang solusi dunia nyata melalui metodologi rekayasa yang baik—mulai dari perumusan masalah, desain sistem, pengembangan prototipe, hingga validasi dan publikasi hasil.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <h2 class="section-title">Kontak Kami</h2>
+          <p class="section-desc">Ada pertanyaan atau ingin berkolaborasi? Kirim pesan melalui formulir berikut.</p>
+        </header>
+
+        <div class="grid contact-grid">
+          <form
+            class="card form reveal"
+            action="https://formspree.io/f/mnngdebo"
+            method="POST"
+            autocomplete="on"
+            novalidate
+          >
+            <div class="form-row">
+              <label for="name">Nama</label>
+              <input id="name" name="name" type="text" placeholder="Nama" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="nama@email.com" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim</button>
+          </form>
+
+          <aside class="contact-info reveal">
+            <h3>Ikuti Kami</h3>
+            <ul class="socials">
+              <li>
+                <a href="https://www.instagram.com/himate_uca" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm6.5-.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/></svg>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/message/IPRS4MVJS37UM1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M16.5 14.5c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.2-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.2.3-.5.5-.8.2-.3.2-.4.3-.7.1-.3 0-.5 0-.7s-.7-1.7-.9-2c-.2-.3-.7-.4-1-.4s-.7 0-1 .3c-.3.3-1 1-1 2.4 0 1.3 1 2.5 1.2 2.7.1.2 2 3 4.9 4.1 2.8 1.1 2.8.7 3.3.7.5 0 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4-.1-.1-.2-.2-.5-.3zM12 2C6.5 2 2 6.5 2 12c0 2.1.6 4 1.7 5.6L2 22l4.4-1.6C8 21.4 9.9 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@himate-uca.id" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M2 4h20v16H2V4zm2 2v12h16V6H4zm2 2l6 4 6-4"/>
+                  </svg>
+                  <span>Email</span>
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container reveal">
+    <p>&copy; 2025 HIMATE UCA. Semua hak dilindungi.</p>
+  </footer>
+
+  <script>
+    // Toggle mode gelap/terang
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Toggle nav mobile
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });  
+
+    // Animasi reveal sederhana
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      for (const el of reveals) {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) el.classList.add('is-visible');
+      }
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>
