@@ -290,12 +290,17 @@ a {
 
 .hero-media {
   margin: 0;
-  justify-self: end;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-media .hero-video {
   display: block;
   width: 100%;
+  max-width: 300px;
+  max-height: 420px;
   aspect-ratio: 297 / 420;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
