@@ -169,72 +169,67 @@ a { color: inherit; text-decoration: none; }
   .nav-links.open { display: flex; }
 }
 
-/* ====== Hero ====== */
+/* ====== Hero Section ====== */
 .hero {
-  padding: clamp(2.5rem, 4vw + 1rem, 5rem) 0;
-  background:
-    linear-gradient(180deg, color-mix(in oklab, var(--primary) 5%, transparent), transparent),
-    radial-gradient(80% 60% at 50% -20%, color-mix(in oklab, var(--primary) 10%, transparent), transparent);
-}
-
-.hero-grid {
-  display: grid;
-  gap: 32px;
-  align-items: center;
-  grid-template-columns: 1fr 1.3fr;
-}
-@media (max-width: 960px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.title {
-  font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem);
-  line-height: 1.2;
-  margin: 0 0 10px;
-}
-
-.subtitle {
-  color: var(--muted);
-  margin: 0 0 18px;
-  font-size: 1.05rem;
-}
-
-.hero-cta {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  background: var(--bg);
 }
 
-/* === MEDIA BOX UNTUK VIDEO === */
-.hero-media {
-  background: var(--surface);
-  border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+.hero-content {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.cta-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ====== Video ====== */
+.hero-video {
+  flex: 1 1 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 9 / 16; /* Rasio portrait seperti Instagram Story/Reels */
-  max-height: 90vh;     /* Batasi agar tidak terlalu tinggi */
-  margin-inline: auto;
 }
 
-.hero-media:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+.hero-video video {
+  width: 100%;
+  max-width: 720px; /* diperbesar dari sebelumnya (biasanya 480–600px) */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-/* === VIDEO === */
-.hero-video {
-  height: 100%;
-  width: auto; /* biar tinggi penuh, lebar menyesuaikan */
-  object-fit: contain; /* tampilkan seluruh video tanpa crop */
-  border-radius: 0;
-  transform: none;
+.hero-video video:hover {
+  transform: scale(1.03);
 }
 
 /* ====== Sections ====== */
