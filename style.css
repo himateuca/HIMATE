@@ -253,48 +253,10 @@ a {
 
 /* ====== Hero Section ====== */
 .hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem 2rem;
-  gap: 2rem;
+  padding: clamp(3rem, 2.5rem + 2vw, 4.5rem) 0;
   background: var(--bg);
 }
 
-.hero-content {
-  flex: 1 1 400px;
-  max-width: 600px;
-}
-
-.hero-content h2 {
-  font-size: 2rem;
-  color: var(--text);
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-}
-
-.cta-btn {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.4rem;
-  font-size: 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  transform: scale(1.05);
-}
-
-/* ====== Hero Grid ====== */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -304,7 +266,26 @@ a {
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+}
+
+.hero-copy {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.hero-copy .title {
+  font-size: clamp(1.75rem, 1.5rem + 1.5vw, 3rem);
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-copy .subtitle {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .hero-media {
@@ -313,8 +294,7 @@ a {
 }
 
 .hero-media .hero-video {
-  display: block; /* override rule lama yang membuatnya flex-container */
-  flex: initial; /* hilangkan flex: 1 1 400px pada elemen video */
+  display: block;
   width: min(720px, 100%);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
