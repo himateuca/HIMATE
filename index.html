@@ -14,15 +14,26 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Navigasi utama">
       <a href="#" class="brand">
-        <img src="assets/logo.png" alt="Logo HME UCA" width="48" height="48" />
+        <img src="assets/logo.png" alt="Logo HME UCA" width="64" height="64" />
         <span class="brand-text">HIMATE UCA</span>
       </a>
 
-      <!-- Custom Light Switch Toggle -->
-      <button id="themeToggle" class="light-switch" aria-label="Ganti mode gelap/terang" aria-pressed="false">
-        <span class="switch-track">
-          <span class="switch-handle"></span>
-        </span>
+       Simple Theme Toggle Button with Sun/Moon Icons 
+      <button id="themeToggle" class="theme-btn" aria-label="Ganti mode gelap/terang" aria-pressed="false">
+        <svg class="icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
       </button>
 
       <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
@@ -74,7 +85,7 @@
         </header>
 
         <div class="grid cards">
-          <!-- Card 1 -->
+           Card 1 
           <article class="card reveal">
             <div class="card-media">
               <img src="assets/Lumitech.png" alt="Proyek Luminotech Building - monitoring energi berbasis IoT" loading="lazy" />
@@ -94,7 +105,7 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
+           Card 2 
           <article class="card reveal">
             <div class="card-media">
               <img src="assets/Gesture.png" alt="Proyek Gesture Clone Robot - kontrol dengan gerakan tangan" loading="lazy" />
@@ -114,7 +125,7 @@
             </div>
           </article>
 
-          <!-- Card 3 -->
+           Card 3 
           <article class="card reveal">
             <div class="card-media">
               <img src="assets/Filling.png" alt="Proyek Filling Machine Water - mesin pengisian otomatis" loading="lazy" />
@@ -134,7 +145,7 @@
             </div>
           </article>
 
-          <!-- Card 4 -->
+           Card 4 
           <article class="card reveal">
             <div class="card-media">
               <img src="assets/Trash.png" alt="Proyek Smart Trash Bin - tempat sampah pintar berbasis IoT" loading="lazy" />
@@ -154,7 +165,7 @@
             </div>
           </article>
 
-          <!-- Card 5 -->
+           Card 5 
           <article class="card reveal">
             <div class="card-media">
               <img src="assets/Tanaman.png" alt="Proyek Penyiram Tanaman Otomatis - IoT watering system" loading="lazy" />
