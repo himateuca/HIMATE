@@ -295,10 +295,12 @@ a {
 
 .hero-media .hero-video {
   display: block;
-  width: min(720px, 100%);
+  width: 100%;
+  aspect-ratio: 210 / 297;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 .hero-media .hero-video:hover {
   transform: scale(1.03);
